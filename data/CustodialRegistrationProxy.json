@@ -1,0 +1,158 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_ethFaucetAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_custodialAccountIndexAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_trainingVoucherAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_systemAccount",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "subject",
+                "type": "address"
+            }
+        ],
+        "name": "NewRegistration",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "CustodialAccountIndex",
+        "outputs": [
+            {
+                "internalType": "contract ICustodialAccountIndex",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "EthFaucet",
+        "outputs": [
+            {
+                "internalType": "contract IEthFaucet",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "TrainingVoucher",
+        "outputs": [
+            {
+                "internalType": "contract IDemurrageTokenSingleNocap",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_subject",
+                "type": "address"
+            }
+        ],
+        "name": "register",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "setNewOwner",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_newSystemAccount",
+                "type": "address"
+            }
+        ],
+        "name": "setNewSystemAccount",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "systemAccount",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "trainingVoucerGiftAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
