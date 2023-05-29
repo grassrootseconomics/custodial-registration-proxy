@@ -28,7 +28,6 @@ class CustodialRegistrationProxySettings:
     def __init__(self):
         self.eth_faucet_address = None
         self.custodial_account_index_address = None
-        self.training_voucher_address = None
         self.system_account_address = None
 
 class CustodialRegistrationProxy(TxFactory):
@@ -61,7 +60,6 @@ class CustodialRegistrationProxy(TxFactory):
         enc = ABIContractEncoder()
         enc.address(settings.eth_faucet_address)
         enc.address(settings.custodial_account_index_address)
-        enc.address(settings.training_voucher_address)
         enc.address(settings.system_account_address)
         code += enc.get()
         tx = self.template(sender_address, None, use_nonce=True)
