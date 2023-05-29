@@ -9,18 +9,12 @@ interface ICustodialAccountIndex {
     function add(address _account) external returns (bool);
 }
 
-interface IDemurrageTokenSingleNocap {
-    function mintTo(address _beneficiary, uint256 _amount) external returns (bool);
-}
-
 contract CustodialRegistrationProxy {
     address public owner;
     address public systemAccount;
-    uint256 public constant trainingVoucerGiftAmount = 5000000;
 
     IEthFaucet public EthFaucet;
     ICustodialAccountIndex public CustodialAccountIndex;
-    IDemurrageTokenSingleNocap public TrainingVoucher;
 
     event NewRegistration(address indexed subject);
 
@@ -34,13 +28,12 @@ contract CustodialRegistrationProxy {
         _;
     }
 
-    constructor(address _ethFaucetAddress, address _custodialAccountIndexAddress, address _trainingVoucherAddress, address _systemAccount) {
+    constructor(address _ethFaucetAddress, address _custodialAccountIndexAddress, address _systemAccount) {
         owner = msg.sender;
         systemAccount = _systemAccount;
 
         EthFaucet = IEthFaucet(_ethFaucetAddress);
         CustodialAccountIndex = ICustodialAccountIndex(_custodialAccountIndexAddress);
-        TrainingVoucher = IDemurrageTokenSingleNocap(_trainingVoucherAddress);
     }
 
     function setNewOwner(address _newOwner)
@@ -63,7 +56,6 @@ contract CustodialRegistrationProxy {
     {
         CustodialAccountIndex.add(_subject);
         EthFaucet.giveTo(_subject);
-        TrainingVoucher.mintTo(_subject, trainingVoucerGiftAmount);
         emit NewRegistration(_subject);
     }
 }

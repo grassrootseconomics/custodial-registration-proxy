@@ -1,6 +1,6 @@
 {
     "compiler": {
-        "version": "0.8.19+commit.7dd6d404"
+        "version": "0.8.20+commit.a1b79de6"
     },
     "language": "Solidity",
     "output": {
@@ -15,11 +15,6 @@
                     {
                         "internalType": "address",
                         "name": "_custodialAccountIndexAddress",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "_trainingVoucherAddress",
                         "type": "address"
                     },
                     {
@@ -63,19 +58,6 @@
                 "outputs": [
                     {
                         "internalType": "contract IEthFaucet",
-                        "name": "",
-                        "type": "address"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "TrainingVoucher",
-                "outputs": [
-                    {
-                        "internalType": "contract IDemurrageTokenSingleNocap",
                         "name": "",
                         "type": "address"
                     }
@@ -147,19 +129,6 @@
                 ],
                 "stateMutability": "view",
                 "type": "function"
-            },
-            {
-                "inputs": [],
-                "name": "trainingVoucerGiftAmount",
-                "outputs": [
-                    {
-                        "internalType": "uint256",
-                        "name": "",
-                        "type": "uint256"
-                    }
-                ],
-                "stateMutability": "view",
-                "type": "function"
             }
         ],
         "devdoc": {
@@ -175,9 +144,9 @@
     },
     "settings": {
         "compilationTarget": {
-            "CustodialRegistration.sol": "CustodialRegistrationProxy"
+            "CustodialRegistrationProxy.sol": "CustodialRegistrationProxy"
         },
-        "evmVersion": "paris",
+        "evmVersion": "byzantium",
         "libraries": {},
         "metadata": {
             "bytecodeHash": "ipfs"
@@ -189,12 +158,12 @@
         "remappings": []
     },
     "sources": {
-        "CustodialRegistration.sol": {
-            "keccak256": "0x0a90873cea012091ec3a74ee55767a4fc430cf96e4d2a4a7a7b0b7712c255939",
+        "CustodialRegistrationProxy.sol": {
+            "keccak256": "0x727a76b1d6397ab0a2a0d3462b72895f7b150c299f67a354b3bf10a19278c741",
             "license": "AGPL-3.0-or-later",
             "urls": [
-                "bzz-raw://8dcac825118e12374e22c3515536292cf3c84860bc3918de80fb8a653b4fb0b9",
-                "dweb:/ipfs/QmYJeJW7hL5RTbuPVpMfVtC4vDYZDCwA5mf1qriwWBXKNd"
+                "bzz-raw://5695aaf0b70ee20eb358909ca4dd7da25044927b72e7e7e3709464abb9f081df",
+                "dweb:/ipfs/QmWwdBur7GUejKUU13DxwtuqpUR5KX7RYWtNtSew2VdqnE"
             ]
         }
     },
