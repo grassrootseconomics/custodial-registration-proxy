@@ -43,7 +43,6 @@ logg = logging.getLogger()
 def process_config_local(config, arg, args, flags):
     config.add(args.proxy_eth_faucet_address, 'PROXY_ETH_FAUCET_ADDRESS')
     config.add(args.proxy_custodial_account_index_address, 'PROXY_CUSTODIAL_ACCOUNT_INDEX_ADDRESS')
-    config.add(args.proxy_training_voucher_address, 'PROXY_TRAINING_VOUCHER_ADDRESS')
     config.add(args.proxy_system_account_address, 'PROXY_SYSTEM_ACCOUNT_ADDRESS')
     return config
 
@@ -55,7 +54,6 @@ argparser = chainlib.eth.cli.ArgumentParser()
 argparser = process_args(argparser, arg, flags)
 argparser.add_argument('--eth-faucet-address', dest='proxy_eth_faucet_address', type=str, help='Faucet address')
 argparser.add_argument('--account-index-address', dest='proxy_custodial_account_index_address', type=str, help='Account index address')
-argparser.add_argument('--training-voucher-address', dest='proxy_training_voucher_address', type=str, help='Training voucher address')
 argparser.add_argument('--system-account-address', dest='proxy_system_account_address', type=str, help='System account address')
 args = argparser.parse_args()
 
@@ -84,7 +82,6 @@ def main():
     c_args = CustodialRegistrationProxySettings()
     c_args.eth_faucet_address = config.get('PROXY_ETH_FAUCET_ADDRESS')
     c_args.custodial_account_index_address = config.get('PROXY_CUSTODIAL_ACCOUNT_INDEX_ADDRESS')
-    c_args.training_voucher_address = config.get('PROXY_TRAINING_VOUCHER_ADDRESS')
     c_args.system_account_address = config.get('PROXY_SYSTEM_ACCOUNT_ADDRESS')
 
     (tx_hash_hex, o) = c.constructor(
